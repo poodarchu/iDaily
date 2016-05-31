@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551CD5941CFD828B00378B65 /* YearCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD5931CFD828B00378B65 /* YearCollectionVC.swift */; };
+		551CD5981CFD86B900378B65 /* PDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD5971CFD86B900378B65 /* PDHelper.swift */; };
+		551CD59B1CFD8E4100378B65 /* iDailyAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD59A1CFD8E4100378B65 /* iDailyAnimator.swift */; };
+		551CD59D1CFDA14200378B65 /* iDailyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD59C1CFDA14200378B65 /* iDailyCollectionViewCell.swift */; };
+		551CD59F1CFDA1F800378B65 /* MonthDayCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD59E1CFDA1F800378B65 /* MonthDayCollectionVC.swift */; };
 		556CF3F61CFCB3F100B1D7D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */; };
 		556CF3F81CFCB3F100B1D7D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF3F71CFCB3F100B1D7D9 /* ViewController.swift */; };
 		556CF3FB1CFCB3F100B1D7D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556CF3F91CFCB3F100B1D7D9 /* Main.storyboard */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551CD5931CFD828B00378B65 /* YearCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearCollectionVC.swift; sourceTree = "<group>"; };
+		551CD5971CFD86B900378B65 /* PDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDHelper.swift; sourceTree = "<group>"; };
+		551CD59A1CFD8E4100378B65 /* iDailyAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iDailyAnimator.swift; sourceTree = "<group>"; };
+		551CD59C1CFDA14200378B65 /* iDailyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iDailyCollectionViewCell.swift; sourceTree = "<group>"; };
+		551CD59E1CFDA1F800378B65 /* MonthDayCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDayCollectionVC.swift; sourceTree = "<group>"; };
 		556CF3F21CFCB3F100B1D7D9 /* iDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556CF3F71CFCB3F100B1D7D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +67,36 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		551CD5951CFD865B00378B65 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				556CF3F71CFCB3F100B1D7D9 /* ViewController.swift */,
+				551CD5931CFD828B00378B65 /* YearCollectionVC.swift */,
+				551CD59E1CFDA1F800378B65 /* MonthDayCollectionVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		551CD5961CFD867700378B65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				556CF40A1CFD274C00B1D7D9 /* iDailyLabel.swift */,
+				55B71DB81CFD5CBE008BC3B6 /* iDailyLayout.swift */,
+				551CD59A1CFD8E4100378B65 /* iDailyAnimator.swift */,
+				551CD5A01CFDA43100378B65 /* Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		551CD5A01CFDA43100378B65 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				551CD59C1CFDA14200378B65 /* iDailyCollectionViewCell.swift */,
+				55B71DB61CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		556CF3E91CFCB3F100B1D7D9 = {
 			isa = PBXGroup;
 			children = (
@@ -76,11 +116,10 @@
 		556CF3F41CFCB3F100B1D7D9 /* iDaily */ = {
 			isa = PBXGroup;
 			children = (
+				551CD5971CFD86B900378B65 /* PDHelper.swift */,
 				556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */,
-				55B71DB61CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift */,
-				55B71DB81CFD5CBE008BC3B6 /* iDailyLayout.swift */,
-				556CF3F71CFCB3F100B1D7D9 /* ViewController.swift */,
-				556CF40A1CFD274C00B1D7D9 /* iDailyLabel.swift */,
+				551CD5961CFD867700378B65 /* Views */,
+				551CD5951CFD865B00378B65 /* Controllers */,
 				557901061CFD339C00D1A97D /* Supporting Files */,
 				551CD5921CFD71F200378B65 /* Resources */,
 			);
@@ -174,10 +213,15 @@
 			files = (
 				556CF40B1CFD274C00B1D7D9 /* iDailyLabel.swift in Sources */,
 				55B71DB91CFD5CBE008BC3B6 /* iDailyLayout.swift in Sources */,
+				551CD59D1CFDA14200378B65 /* iDailyCollectionViewCell.swift in Sources */,
+				551CD59B1CFD8E4100378B65 /* iDailyAnimator.swift in Sources */,
 				556CF3FE1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld in Sources */,
 				556CF3F81CFCB3F100B1D7D9 /* ViewController.swift in Sources */,
 				556CF3F61CFCB3F100B1D7D9 /* AppDelegate.swift in Sources */,
+				551CD5981CFD86B900378B65 /* PDHelper.swift in Sources */,
+				551CD5941CFD828B00378B65 /* YearCollectionVC.swift in Sources */,
 				55B71DB71CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift in Sources */,
+				551CD59F1CFDA1F800378B65 /* MonthDayCollectionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

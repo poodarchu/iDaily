@@ -52,8 +52,8 @@ class ViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! HomeYearCollectionViewCell
         
-        cell.textInt = 2015
-        cell.labelText = "二零一五 年"
+        cell.textInt = 2016
+        cell.labelText = "二零一六 年"
         
         return cell
     }
@@ -65,6 +65,29 @@ class ViewController: UICollectionViewController {
         
         let leftRightMagrin = (collectionViewWidth - itemWidth)/2
         return UIEdgeInsetsMake(0, leftRightMagrin, 0, leftRightMagrin)
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let identifier = "iDailyYearCollectionVC"
+        
+        let dvc = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! YearCollectionVC
+        
+        dvc.year = 2016
+        
+        //页面跳转
+        self.navigationController!.pushViewController(dvc, animated: true)
+    }
+}
+
+extension ViewController: UINavigationControllerDelegate {
+    func navigationController(navigationController: UINavigationController,
+                              animationControllerForOperation operation: UINavigationControllerOperation,
+                                                              fromViewController fromVC: UIViewController,
+                                                                                 toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animator = iDailyAnimator()
+        animator.operation = operation
+        
+        return animator
     }
 }
 

@@ -1,0 +1,3 @@
+target 'iDaily' do
+	pod 'paper-onboarding'
+end

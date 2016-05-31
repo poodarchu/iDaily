@@ -1,0 +1,98 @@
+//
+//  PDHelper.swift
+//  iDaily
+//
+//  Created by P. Chu on 5/31/16.
+//  Copyright © 2016 Poodar. All rights reserved.
+//
+
+import UIKit
+
+let screenRect = UIScreen.mainScreen().bounds
+let YAMABUKI = UIColor(red: 255.0/255.0, green: 177.0/255.0, blue: 27.0/255.0, alpha: 1.0)
+
+func btnWith(text text: String,
+                        fontSize: CGFloat,
+                        width: CGFloat,
+                        normalImgNm: String,
+                        highlightedImgNm: String) -> UIButton
+{
+    //自定义btn控件
+    let btn = UIButton(type: UIButtonType.Custom)
+    //设置btn的frame
+    btn.frame = CGRectMake(0, 0, width, width)
+    
+    let font = UIFont(name: "WenYue-XinQingNianTi-NC-W8", size: fontSize) as UIFont!
+    let textAttributes: [String: AnyObject] = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()]
+    let attributeText = NSAttributedString(string: text,
+                                           attributes: textAttributes)
+    
+    btn.setAttributedTitle(attributeText, forState: UIControlState.Normal)
+    btn.setBackgroundImage(UIImage(named: normalImgNm), forState: UIControlState.Normal)
+    btn.setBackgroundImage(UIImage(named: highlightedImgNm), forState: UIControlState.Highlighted)
+    
+    return btn
+}
+
+func numToChinese(num: Int) -> String {
+    let numArr = Array(String(num).characters)
+    var finalStr = ""
+    for singleNum in numArr {
+        let string = singleNumToChinese(singleNum)
+        finalStr = "\(finalStr)\(string)"
+    }
+    
+    return finalStr
+}
+
+func numToChineseWithUnit(num: Int) -> String {
+    let numArr = Array(String(num).characters)
+    var units = unitParser(numArr.count)
+    var finalStr = ""
+    
+    for(index, singleNum) in numArr.enumerate() {
+        let string = singleNumToChinese(singleNum)
+        if(!(string == "零" && (index+1) == numArr.count)) {
+            finalStr = "\(finalStr)\(string)\(units[index])"
+        }
+    }
+    
+    return finalStr
+}
+
+func unitParser(unit: Int) -> [String] {
+    var units = Array(["万", "千", "百", "十", ""].reverse())
+    let parsedUnits = units[0..<(unit)].reverse()
+    let slicedUnits: ArraySlice<String> = ArraySlice(parsedUnits)
+    let final: [String] = Array(slicedUnits)
+    
+    return final
+}
+
+func singleNumToChinese(number:Character) -> String {
+    switch number {
+    case "0":
+        return "零"
+    case "1":
+        return "一"
+    case "2":
+        return "二"
+    case "3":
+        return "三"
+    case "4":
+        return "四"
+    case "5":
+        return "五"
+    case "6":
+        return "六"
+    case "7":
+        return "七"
+    case "8":
+        return "八"
+    case "9":
+        return "九"
+    default:
+        return ""
+    }
+}
+
