@@ -9,12 +9,15 @@
 import UIKit
 import CoreData
 
+let itemHeight: CGFloat = 150.0
+let itemWidth: CGFloat = 60.0
+let collectionViewWidth = itemWidth * 3
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true

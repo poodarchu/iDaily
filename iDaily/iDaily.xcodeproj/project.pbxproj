@@ -13,6 +13,11 @@
 		556CF3FE1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 556CF3FC1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld */; };
 		556CF4001CFCB3F100B1D7D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556CF3FF1CFCB3F100B1D7D9 /* Assets.xcassets */; };
 		556CF4031CFCB3F100B1D7D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556CF4011CFCB3F100B1D7D9 /* LaunchScreen.storyboard */; };
+		556CF40B1CFD274C00B1D7D9 /* iDailyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF40A1CFD274C00B1D7D9 /* iDailyLabel.swift */; };
+		55B71DB51CFD5520008BC3B6 /* XinQingNianTi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55B71DB41CFD5520008BC3B6 /* XinQingNianTi.otf */; };
+		55B71DB71CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B71DB61CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift */; };
+		55B71DB91CFD5CBE008BC3B6 /* iDailyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B71DB81CFD5CBE008BC3B6 /* iDailyLayout.swift */; };
+		55B71DBB1CFD65CB008BC3B6 /* GuTiFangSong.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55B71DBA1CFD65CB008BC3B6 /* GuTiFangSong.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		556CF3FF1CFCB3F100B1D7D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		556CF4021CFCB3F100B1D7D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		556CF4041CFCB3F100B1D7D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		556CF40A1CFD274C00B1D7D9 /* iDailyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iDailyLabel.swift; sourceTree = "<group>"; };
+		55B71DB41CFD5520008BC3B6 /* XinQingNianTi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = XinQingNianTi.otf; sourceTree = "<group>"; };
+		55B71DB61CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeYearCollectionViewCell.swift; sourceTree = "<group>"; };
+		55B71DB81CFD5CBE008BC3B6 /* iDailyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iDailyLayout.swift; sourceTree = "<group>"; };
+		55B71DBA1CFD65CB008BC3B6 /* GuTiFangSong.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GuTiFangSong.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,76 @@
 		556CF3F41CFCB3F100B1D7D9 /* iDaily */ = {
 			isa = PBXGroup;
 			children = (
+				5579010C1CFD34A700D1A97D /* Helpers */,
+				5579010B1CFD34A100D1A97D /* Views */,
+				5579010A1CFD349700D1A97D /* Controllers */,
+				557901091CFD349100D1A97D /* Models */,
 				556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */,
-				556CF3F71CFCB3F100B1D7D9 /* ViewController.swift */,
-				556CF3F91CFCB3F100B1D7D9 /* Main.storyboard */,
-				556CF3FF1CFCB3F100B1D7D9 /* Assets.xcassets */,
-				556CF4011CFCB3F100B1D7D9 /* LaunchScreen.storyboard */,
-				556CF4041CFCB3F100B1D7D9 /* Info.plist */,
-				556CF3FC1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld */,
+				556CF40A1CFD274C00B1D7D9 /* iDailyLabel.swift */,
+				557901071CFD33C100D1A97D /* Views */,
+				557901061CFD339C00D1A97D /* Supporting Files */,
+				557901081CFD33D000D1A97D /* Resources */,
 			);
 			path = iDaily;
+			sourceTree = "<group>";
+		};
+		557901061CFD339C00D1A97D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55B71DBA1CFD65CB008BC3B6 /* GuTiFangSong.otf */,
+				55B71DB41CFD5520008BC3B6 /* XinQingNianTi.otf */,
+				556CF4041CFCB3F100B1D7D9 /* Info.plist */,
+				556CF3FC1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld */,
+				556CF3F91CFCB3F100B1D7D9 /* Main.storyboard */,
+				556CF4011CFCB3F100B1D7D9 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		557901071CFD33C100D1A97D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		557901081CFD33D000D1A97D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				556CF3FF1CFCB3F100B1D7D9 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		557901091CFD349100D1A97D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5579010A1CFD349700D1A97D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				556CF3F71CFCB3F100B1D7D9 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5579010B1CFD34A100D1A97D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55B71DB61CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift */,
+				55B71DB81CFD5CBE008BC3B6 /* iDailyLayout.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5579010C1CFD34A700D1A97D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				556CF4031CFCB3F100B1D7D9 /* LaunchScreen.storyboard in Resources */,
+				55B71DBB1CFD65CB008BC3B6 /* GuTiFangSong.otf in Resources */,
 				556CF4001CFCB3F100B1D7D9 /* Assets.xcassets in Resources */,
+				55B71DB51CFD5520008BC3B6 /* XinQingNianTi.otf in Resources */,
 				556CF3FB1CFCB3F100B1D7D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,9 +212,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556CF40B1CFD274C00B1D7D9 /* iDailyLabel.swift in Sources */,
+				55B71DB91CFD5CBE008BC3B6 /* iDailyLayout.swift in Sources */,
 				556CF3FE1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld in Sources */,
 				556CF3F81CFCB3F100B1D7D9 /* ViewController.swift in Sources */,
 				556CF3F61CFCB3F100B1D7D9 /* AppDelegate.swift in Sources */,
+				55B71DB71CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +367,7 @@
 				556CF4091CFCB3F100B1D7D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
