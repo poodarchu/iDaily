@@ -8,14 +8,23 @@
 
 import UIKit
 
+/// 工具函数，定义了：
+/**
+ * 1. 屏幕尺寸
+ * 2. 选定字体颜色除黑丝之外使用 日本传统色“山吹”
+ * 3. 自定义按钮
+ * 4. 数字转汉字的工具函数
+ */
+
 let screenRect = UIScreen.mainScreen().bounds
 let YAMABUKI = UIColor(red: 255.0/255.0, green: 177.0/255.0, blue: 27.0/255.0, alpha: 1.0)
 
-func btnWith(text text: String,
-                        fontSize: CGFloat,
-                        width: CGFloat,
-                        normalImgNm: String,
-                        highlightedImgNm: String) -> UIButton
+//传输参数，返回自定义的btn，自定义的范围包括字体，字体大小，颜色，文字内容，背景图片
+func btnWith(text text:        String,
+             fontSize:         CGFloat,
+             width:            CGFloat,
+             normalImgNm:      String,
+             highlightedImgNm: String) -> UIButton
 {
     //自定义btn控件
     let btn = UIButton(type: UIButtonType.Custom)

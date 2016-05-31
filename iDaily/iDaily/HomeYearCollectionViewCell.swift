@@ -28,6 +28,8 @@ class HomeYearCollectionViewCell: UICollectionViewCell {
         self.addSubview(textLabel)
     }
     
+    //Lays out subviews.
+    //当子控件的内容变化时，重新排列子控件
     override func layoutSubviews() {
 //        super.layoutSubviews()
         self.textLabel.center = CGPointMake(itemWidth/2.0, 150.0/2.0)

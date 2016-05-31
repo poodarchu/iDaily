@@ -12,7 +12,7 @@ let itemHeight: CGFloat = 150.0    //cell的高度
 let itemWidth: CGFloat = 60.0
 let collectionViewWidth = itemWidth * 3 //每行显示3个cell
 
-class ViewController: UICollectionViewController {
+class PDViewController: UICollectionViewController {
 
     override func viewDidLoad()
     {
@@ -79,7 +79,7 @@ class ViewController: UICollectionViewController {
     }
 }
 
-extension ViewController: UINavigationControllerDelegate {
+extension PDViewController: UINavigationControllerDelegate {
     func navigationController(navigationController: UINavigationController,
                               animationControllerForOperation operation: UINavigationControllerOperation,
                                                               fromViewController fromVC: UIViewController,

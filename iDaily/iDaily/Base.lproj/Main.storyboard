@@ -8,7 +8,7 @@
         <!--CollectionVC-->
         <scene sceneID="ehU-VL-tSj">
             <objects>
-                <collectionViewController id="poc-he-RHz" userLabel="CollectionVC" customClass="ViewController" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="poc-he-RHz" userLabel="CollectionVC" customClass="PDViewController" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1T6-1t-dH2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,6 +35,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="WBp-xd-VZU"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <segue destination="MGa-zp-ndi" kind="showDetail" id="EjQ-aH-vjw"/>
                     </connections>
@@ -72,6 +73,7 @@
                             <outlet property="delegate" destination="MGa-zp-ndi" id="QFq-0z-ecx"/>
                         </connections>
                     </collectionView>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KQ-Bi-Ft2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,21 +108,27 @@
                             <outlet property="delegate" destination="FS3-bA-wsS" id="g7h-br-g7i"/>
                         </connections>
                     </collectionView>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oop-Ir-aQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1527" y="377"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav Controller-->
         <scene sceneID="Ehs-Ef-JmY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dKH-kh-khV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" toolbarHidden="NO" id="dKH-kh-khV" customClass="PDNavController" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tYK-5A-CdR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ELR-3F-h9X">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="poc-he-RHz" kind="relationship" relationship="rootViewController" id="55H-ge-8AE"/>
                     </connections>
