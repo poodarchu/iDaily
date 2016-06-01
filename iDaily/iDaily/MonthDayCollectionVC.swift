@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
-let reuseIdentifier = "Cell"
-
-class MonthDayCollectionVC: UICollectionViewController {
+class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControllerDelegate {
+    
+    var diaries = [NSManagedObject]()
     
     var month: Int!
     
@@ -21,29 +22,46 @@ class MonthDayCollectionVC: UICollectionViewController {
     
     var monthLabel: iDailyLabel!
     
+    var fetchedResultsController : NSFetchedResultsController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        do {
+            let fetchRequest = NSFetchRequest(entityName:"PDDiary")
+            
+            print("year = \(year) AND month = \(month)")
+            
+            fetchRequest.predicate = NSPredicate(format: "year = \(year) AND month = \(month)")
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "create_date", ascending: true)]
+            
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                  managedObjectContext: managedContext, sectionNameKeyPath: "year",
+                                                                  cacheName: nil)
+            
+            fetchedResultsController.delegate = self
+            try fetchedResultsController.performFetch()
+            
+            diaries = fetchedResultsController.fetchedObjects as! [NSManagedObject]
+        } catch _ {
+            
+        }
+        print("This month have \(diaries.count) \n", terminator: "")
+        
+        
         yearLabel = iDailyLabel(fontName: "WenYue-XinQingNianTi-NC-W8", labelText: "\(numToChinese(year))年", fontSize: 22.0,lineHeight: 5.0)
-        
         yearLabel.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 20 + yearLabel.frame.size.height/2.0 )
-        
-        self.view.addSubview(yearLabel)
-        
         yearLabel.userInteractionEnabled = true
-        
-        let mTapUpRecognizer = UITapGestureRecognizer(target: self, action: "backToHome")
-        mTapUpRecognizer.numberOfTapsRequired = 1
-        yearLabel.addGestureRecognizer(mTapUpRecognizer)
+        self.view.addSubview(yearLabel)
+
+//        let mTapUpRecognizer = UITapGestureRecognizer(target: self, action:"backToHome")
+//        mTapUpRecognizer.numberOfTapsRequired = 1
+//        yearLabel.addGestureRecognizer(mTapUpRecognizer)
         
         //Add compose button
-        
         composeButton = btnWith(text: "记",  fontSize: 14.0,  width: 40.0,  normalImgNm: "Oval", highlightedImgNm: "Oval_pressed")
-        
         composeButton.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 38 + yearLabel.frame.size.height + 26.0/2.0)
-        
-        composeButton.addTarget(self, action: "newCompose", forControlEvents: UIControlEvents.TouchUpInside)
-        
+        composeButton.addTarget(self, action:#selector(MonthDayCollectionVC.newCompose), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view.addSubview(composeButton)
         
@@ -56,10 +74,9 @@ class MonthDayCollectionVC: UICollectionViewController {
         monthLabel.updateLabelColor(YAMABUKI)
         monthLabel.userInteractionEnabled = true
         
-        let mmTapUpRecognizer = UITapGestureRecognizer(target: self, action: "backToYear")
-        mmTapUpRecognizer.numberOfTapsRequired = 1
-        monthLabel.addGestureRecognizer(mmTapUpRecognizer)
-        
+//        let mmTapUpRecognizer = UITapGestureRecognizer(target: self, action:"backToYear")
+//        mmTapUpRecognizer.numberOfTapsRequired = 1
+//        monthLabel.addGestureRecognizer(mmTapUpRecognizer)
         
         self.view.addSubview(monthLabel)
         
@@ -69,11 +86,18 @@ class MonthDayCollectionVC: UICollectionViewController {
         yearLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
         self.collectionView?.setCollectionViewLayout(yearLayout, animated: false)
         
-        self.collectionView!.frame = CGRect(x:0, y:0, width: collectionViewWidth, height: itemHeight)
-        self.collectionView!.center = CGPoint(x: self.view.frame.size.width/2.0, y: self.view.frame.size.height/2.0)
+        self.collectionView?.frame = CGRect(x:0, y:0, width:
+            collectionViewWidth, height: itemHeight)
+        self.collectionView?.center = CGPoint(x: self.view.frame.size.width/2.0, y: self.view.frame.size.height/2.0)
         
         self.view.backgroundColor = UIColor.whiteColor()
         self.collectionView?.backgroundColor = UIColor.whiteColor()
+    }
+    
+    func newCompose() {
+        let composeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PDComposeVC") as! PDComposeVC
+        
+        self.presentViewController(composeViewController, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,7 +110,7 @@ class MonthDayCollectionVC: UICollectionViewController {
     
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return diaries.count
     }
     
     
@@ -99,8 +123,14 @@ class MonthDayCollectionVC: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("iDailyCollectionViewCell", forIndexPath: indexPath) as! iDailyCollectionViewCell
-        cell.labelText = "三 日"
-        cell.textInt = 6
+        
+        let diary = fetchedResultsController.objectAtIndexPath(indexPath) as! PDDiary
+        
+        if let title = diary.title {
+            cell.labelText = title
+        } else {
+            cell.labelText = "\(numToChineseWithUnit(NSCalendar.currentCalendar().component(NSCalendarUnit.Day, fromDate: diary.create_date))) 日"
+        }
         
         return cell
     }

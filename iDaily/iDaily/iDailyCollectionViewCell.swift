@@ -23,8 +23,6 @@ class iDailyCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    var textInt: Int = 0
-    
     //当从storyboard中加载该空间时，调用该方法做好所需准备
     //设置行高
     //设置textLabel的样式

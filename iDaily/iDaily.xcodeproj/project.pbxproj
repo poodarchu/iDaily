@@ -13,7 +13,7 @@
 		551CD59D1CFDA14200378B65 /* iDailyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD59C1CFDA14200378B65 /* iDailyCollectionViewCell.swift */; };
 		551CD59F1CFDA1F800378B65 /* MonthDayCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD59E1CFDA1F800378B65 /* MonthDayCollectionVC.swift */; };
 		556CF3F61CFCB3F100B1D7D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */; };
-		556CF3F81CFCB3F100B1D7D9 /* PDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF3F71CFCB3F100B1D7D9 /* PDViewController.swift */; };
+		556CF3F81CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF3F71CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift */; };
 		556CF3FB1CFCB3F100B1D7D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556CF3F91CFCB3F100B1D7D9 /* Main.storyboard */; };
 		556CF3FE1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 556CF3FC1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld */; };
 		556CF4001CFCB3F100B1D7D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556CF3FF1CFCB3F100B1D7D9 /* Assets.xcassets */; };
@@ -23,6 +23,11 @@
 		55B71DB71CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B71DB61CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift */; };
 		55B71DB91CFD5CBE008BC3B6 /* iDailyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B71DB81CFD5CBE008BC3B6 /* iDailyLayout.swift */; };
 		55B71DBB1CFD65CB008BC3B6 /* GuTiFangSong.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55B71DBA1CFD65CB008BC3B6 /* GuTiFangSong.otf */; };
+		55D6CF381CFDFE9300911347 /* PDComposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6CF371CFDFE9300911347 /* PDComposeVC.swift */; };
+		55D6CF3A1CFE0A3E00911347 /* PDLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6CF391CFE0A3E00911347 /* PDLocationHelper.swift */; };
+		55D6CF3C1CFE6B9D00911347 /* PDDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6CF3B1CFE6B9D00911347 /* PDDiaryVC.swift */; };
+		55D6CF3F1CFE6C3300911347 /* PDDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6CF3E1CFE6C3300911347 /* PDDiary.swift */; };
+		55D6CF411CFE742500911347 /* DiaryTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 55D6CF401CFE742500911347 /* DiaryTemplate.html */; };
 		55DDA8071CFDBD0900F0479F /* PDNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDA8061CFDBD0900F0479F /* PDNavController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +39,7 @@
 		551CD59E1CFDA1F800378B65 /* MonthDayCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDayCollectionVC.swift; sourceTree = "<group>"; };
 		556CF3F21CFCB3F100B1D7D9 /* iDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		556CF3F71CFCB3F100B1D7D9 /* PDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDViewController.swift; sourceTree = "<group>"; };
+		556CF3F71CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDHomeCollectionVC.swift; sourceTree = "<group>"; };
 		556CF3FA1CFCB3F100B1D7D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		556CF3FD1CFCB3F100B1D7D9 /* iDaily.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iDaily.xcdatamodel; sourceTree = "<group>"; };
 		556CF3FF1CFCB3F100B1D7D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +50,11 @@
 		55B71DB61CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeYearCollectionViewCell.swift; sourceTree = "<group>"; };
 		55B71DB81CFD5CBE008BC3B6 /* iDailyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iDailyLayout.swift; sourceTree = "<group>"; };
 		55B71DBA1CFD65CB008BC3B6 /* GuTiFangSong.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GuTiFangSong.otf; sourceTree = "<group>"; };
+		55D6CF371CFDFE9300911347 /* PDComposeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDComposeVC.swift; sourceTree = "<group>"; };
+		55D6CF391CFE0A3E00911347 /* PDLocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDLocationHelper.swift; sourceTree = "<group>"; };
+		55D6CF3B1CFE6B9D00911347 /* PDDiaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDDiaryVC.swift; sourceTree = "<group>"; };
+		55D6CF3E1CFE6C3300911347 /* PDDiary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDDiary.swift; sourceTree = "<group>"; };
+		55D6CF401CFE742500911347 /* DiaryTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DiaryTemplate.html; sourceTree = "<group>"; };
 		55DDA8061CFDBD0900F0479F /* PDNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDNavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +72,7 @@
 		551CD5921CFD71F200378B65 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				55D6CF401CFE742500911347 /* DiaryTemplate.html */,
 				55B71DBA1CFD65CB008BC3B6 /* GuTiFangSong.otf */,
 				55B71DB41CFD5520008BC3B6 /* XinQingNianTi.otf */,
 				556CF3FF1CFCB3F100B1D7D9 /* Assets.xcassets */,
@@ -72,10 +83,12 @@
 		551CD5951CFD865B00378B65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				556CF3F71CFCB3F100B1D7D9 /* PDViewController.swift */,
+				55DDA8061CFDBD0900F0479F /* PDNavController.swift */,
+				556CF3F71CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift */,
 				551CD5931CFD828B00378B65 /* YearCollectionVC.swift */,
 				551CD59E1CFDA1F800378B65 /* MonthDayCollectionVC.swift */,
-				55DDA8061CFDBD0900F0479F /* PDNavController.swift */,
+				55D6CF3B1CFE6B9D00911347 /* PDDiaryVC.swift */,
+				55D6CF371CFDFE9300911347 /* PDComposeVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -119,10 +132,11 @@
 		556CF3F41CFCB3F100B1D7D9 /* iDaily */ = {
 			isa = PBXGroup;
 			children = (
-				551CD5971CFD86B900378B65 /* PDHelper.swift */,
 				556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */,
+				55C0A4DB1CFE97D1008B54DD /* Helpers */,
 				551CD5961CFD867700378B65 /* Views */,
 				551CD5951CFD865B00378B65 /* Controllers */,
+				55D6CF3D1CFE6C0E00911347 /* Models */,
 				557901061CFD339C00D1A97D /* Supporting Files */,
 				551CD5921CFD71F200378B65 /* Resources */,
 			);
@@ -138,6 +152,23 @@
 				556CF4011CFCB3F100B1D7D9 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55C0A4DB1CFE97D1008B54DD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				551CD5971CFD86B900378B65 /* PDHelper.swift */,
+				55D6CF391CFE0A3E00911347 /* PDLocationHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		55D6CF3D1CFE6C0E00911347 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55D6CF3E1CFE6C3300911347 /* PDDiary.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +234,7 @@
 				55B71DBB1CFD65CB008BC3B6 /* GuTiFangSong.otf in Resources */,
 				556CF4001CFCB3F100B1D7D9 /* Assets.xcassets in Resources */,
 				55B71DB51CFD5520008BC3B6 /* XinQingNianTi.otf in Resources */,
+				55D6CF411CFE742500911347 /* DiaryTemplate.html in Resources */,
 				556CF3FB1CFCB3F100B1D7D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,11 +251,15 @@
 				55B71DB91CFD5CBE008BC3B6 /* iDailyLayout.swift in Sources */,
 				551CD59D1CFDA14200378B65 /* iDailyCollectionViewCell.swift in Sources */,
 				551CD59B1CFD8E4100378B65 /* iDailyAnimator.swift in Sources */,
+				55D6CF3F1CFE6C3300911347 /* PDDiary.swift in Sources */,
 				556CF3FE1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld in Sources */,
-				556CF3F81CFCB3F100B1D7D9 /* PDViewController.swift in Sources */,
+				556CF3F81CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift in Sources */,
 				556CF3F61CFCB3F100B1D7D9 /* AppDelegate.swift in Sources */,
+				55D6CF3A1CFE0A3E00911347 /* PDLocationHelper.swift in Sources */,
+				55D6CF381CFDFE9300911347 /* PDComposeVC.swift in Sources */,
 				551CD5981CFD86B900378B65 /* PDHelper.swift in Sources */,
 				551CD5941CFD828B00378B65 /* YearCollectionVC.swift in Sources */,
+				55D6CF3C1CFE6B9D00911347 /* PDDiaryVC.swift in Sources */,
 				55B71DB71CFD58BE008BC3B6 /* HomeYearCollectionViewCell.swift in Sources */,
 				551CD59F1CFDA1F800378B65 /* MonthDayCollectionVC.swift in Sources */,
 			);
@@ -288,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -327,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

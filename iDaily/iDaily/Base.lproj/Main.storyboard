@@ -5,10 +5,46 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--DiaryVC-->
+        <scene sceneID="uh5-st-34X">
+            <objects>
+                <viewController storyboardIdentifier="PDDiaryVC" id="vyG-LB-8pp" customClass="PDDiaryVC" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Nv-BK-TeY"/>
+                        <viewControllerLayoutGuide type="bottom" id="pDf-KJ-kWy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O6B-wH-Tgz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KqM-5h-5EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="-497"/>
+        </scene>
+        <!--ComposeVC-->
+        <scene sceneID="e3f-jH-NHD">
+            <objects>
+                <viewController storyboardIdentifier="PDComposeVC" id="ZuC-TJ-iNx" customClass="PDComposeVC" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FhM-KE-fQH"/>
+                        <viewControllerLayoutGuide type="bottom" id="cb8-T5-zhU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="am3-3X-HZw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rmj-eP-erz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="-508"/>
+        </scene>
         <!--CollectionVC-->
         <scene sceneID="ehU-VL-tSj">
             <objects>
-                <collectionViewController id="poc-he-RHz" userLabel="CollectionVC" customClass="PDViewController" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="poc-he-RHz" userLabel="CollectionVC" customClass="PDHomeCollectionVC" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1T6-1t-dH2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -16,8 +16,51 @@ import UIKit
  * 4. 数字转汉字的工具函数
  */
 
+let defaultFontName = "WenYue-XinQingNianTi-NC-W8"
+
 let screenRect = UIScreen.mainScreen().bounds
+
 let YAMABUKI = UIColor(red: 255.0/255.0, green: 177.0/255.0, blue: 27.0/255.0, alpha: 1.0)
+
+let DiaryFont = UIFont(name: defaultFontName, size: 18) as UIFont!
+let DiaryLocationFont = UIFont(name: defaultFontName, size: 16) as UIFont!
+let DiaryTitleFont = UIFont(name: defaultFontName, size: 18) as UIFont!
+
+let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+let managedContext = appDelegate.managedObjectContext
+
+
+
+extension PDDiary {
+    func updateTimeWithDate(date: NSDate){
+        self.create_date = date
+        self.year = NSCalendar.currentCalendar().component(NSCalendarUnit.Year, fromDate: date)
+        self.month = NSCalendar.currentCalendar().component(NSCalendarUnit.Month, fromDate: date)
+    }
+}
+
+extension UIWebView {
+    
+    func captureView() -> UIImage{
+        // tempframe to reset view size after image was created
+        let tmpFrame = self.frame
+        // set new Frame
+        var aFrame = self.frame
+        aFrame.size.width = self.sizeThatFits(UIScreen.mainScreen().bounds.size).width
+        self.frame = aFrame
+        // do image magic
+        UIGraphicsBeginImageContextWithOptions(self.sizeThatFits(UIScreen.mainScreen().bounds.size), false, UIScreen.mainScreen().scale)
+        let resizedContext = UIGraphicsGetCurrentContext()
+        self.layer.renderInContext(resizedContext!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        // reset Frame of view to origin
+        self.frame = tmpFrame
+        
+        return image
+    }
+}
+
 
 //传输参数，返回自定义的btn，自定义的范围包括字体，字体大小，颜色，文字内容，背景图片
 func btnWith(text text:        String,
