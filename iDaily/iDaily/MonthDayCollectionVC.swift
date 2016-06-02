@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControllerDelegate {
+class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate {
     
     var diaries = [NSManagedObject]()
     
@@ -26,6 +26,13 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let mDoubleUpRecognizer = UITapGestureRecognizer(target: self, action: #selector(MonthDayCollectionVC.hideDiary))
+        mDoubleUpRecognizer.delegate = self
+        mDoubleUpRecognizer.numberOfTapsRequired = 2
+        self.view.addGestureRecognizer(mDoubleUpRecognizer)
+        
+        
         
         do {
             let fetchRequest = NSFetchRequest(entityName:"PDDiary")
@@ -87,7 +94,10 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
         self.collectionView?.frame = CGRect(x:0, y:0, width:
             collectionViewWidth, height: itemHeight)
         self.collectionView?.center = CGPoint(x: self.view.frame.size.width/2.0, y: self.view.frame.size.height/2.0)
+        
         self.collectionView?.showsHorizontalScrollIndicator = false
+        self.collectionView?.showsVerticalScrollIndicator = false
+        
         self.view.backgroundColor = UIColor.whiteColor()
         self.collectionView?.backgroundColor = UIColor.whiteColor()
     }
@@ -152,5 +162,9 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
         diaries = fetchedResultsController.fetchedObjects as! [NSManagedObject]
         collectionView?.reloadData()
         self.collectionView?.setCollectionViewLayout(iDailyLayout(), animated: false)
+    }
+    
+    func hideDiary() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }

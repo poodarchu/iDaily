@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class YearCollectionVC: UICollectionViewController {
+class YearCollectionVC: UICollectionViewController, UIGestureRecognizerDelegate {
     var year: Int!
     
     var yearLabel: UILabel!
@@ -22,6 +22,11 @@ class YearCollectionVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let mDoubleUpRecognizer = UITapGestureRecognizer(target: self, action: #selector(YearCollectionVC.hideDiary))
+        mDoubleUpRecognizer.delegate = self
+        mDoubleUpRecognizer.numberOfTapsRequired = 2
+        self.view.addGestureRecognizer(mDoubleUpRecognizer)
         
 //        self.clearsSelectionOnViewWillAppear = false
         
@@ -139,6 +144,10 @@ class YearCollectionVC: UICollectionViewController {
         }
         
         return cell
+    }
+    
+    func hideDiary() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
 }
