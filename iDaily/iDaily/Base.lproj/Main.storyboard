@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqM-5h-5EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-59" y="223"/>
+            <point key="canvasLocation" x="643" y="831"/>
         </scene>
         <!--ComposeVC-->
         <scene sceneID="e3f-jH-NHD">
@@ -45,7 +45,7 @@
         <!--CollectionVC-->
         <scene sceneID="ehU-VL-tSj">
             <objects>
-                <collectionViewController id="poc-he-RHz" userLabel="CollectionVC" customClass="PDHomeCollectionVC" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="PDHomeCollectionVC" id="poc-he-RHz" userLabel="CollectionVC" customClass="PDHomeCollectionVC" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1T6-1t-dH2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,10 +72,7 @@
                         </connections>
                     </collectionView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="iDaily By P. Chu" id="WBp-xd-VZU">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="aJp-Yb-KKT"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cCU-R7-7Rl"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="iDaily By P. Chu" id="WBp-xd-VZU"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -85,6 +82,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Si2-zS-PaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-845" y="377"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="ulF-FH-NNY">
+            <objects>
+                <viewController storyboardIdentifier="PDProfile" id="TI6-kh-lSD" customClass="PDProfile" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uw9-F5-aKX"/>
+                        <viewControllerLayoutGuide type="bottom" id="tU4-fS-v8w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="crk-p9-NKW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smJ-XF-cD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-862" y="1119"/>
+        </scene>
+        <!--Side Menu-->
+        <scene sceneID="13O-Go-KwX">
+            <objects>
+                <viewController storyboardIdentifier="SSASideMenu" id="cKm-tz-Ug7" customClass="SSASideMenu" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P5R-Jm-ctF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ebt-2g-uCH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KvJ-p3-cWI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contentViewStoryboardID" value="PDNavController"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftMenuViewStoryboardID" value="PDProfile"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rightMenuViewStoryboardID" value="PDComposeVC"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="fadeMenuView" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="scaleMenuView" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="scaleBackgroundImageView" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="parallaxEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bouncesHorizontally" value="YES"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="Background"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMf-FT-lsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-63" y="-457"/>
         </scene>
         <!--Year CollectionVC-->
         <scene sceneID="Jdh-z2-jBt">
@@ -119,7 +163,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KQ-Bi-Ft2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91" y="-485"/>
+            <point key="canvasLocation" x="-63" y="271"/>
         </scene>
         <!--Month Day CollectionVC-->
         <scene sceneID="igt-Q7-59O">
@@ -154,7 +198,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oop-Ir-aQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="377"/>
+            <point key="canvasLocation" x="677" y="91"/>
         </scene>
         <!--Start PageVC-->
         <scene sceneID="RDA-2I-G21">
@@ -168,11 +212,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awm-CL-PFd">
-                                <rect key="frame" x="0.0" y="127" width="600" height="473"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awm-CL-PFd">
+                                <rect key="frame" x="0.0" y="107" width="600" height="493"/>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="desktop" translatesAutoresizingMaskIntoConstraints="NO" id="HnV-6L-WTH">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desktop" translatesAutoresizingMaskIntoConstraints="NO" id="HnV-6L-WTH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="-1519" y="384"/>
         </scene>
-        <!--登陆-->
+        <!--Login-->
         <scene sceneID="bng-3G-bcr">
             <objects>
-                <viewController storyboardIdentifier="PDLoginVC" id="gDU-NG-uTv" customClass="PDLoginVC" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PDLoginVC" id="gDU-NG-uTv" userLabel="Login" customClass="PDLoginVC" customModule="iDaily" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N31-zw-iJ2"/>
                         <viewControllerLayoutGuide type="bottom" id="f7M-JJ-hqu"/>
@@ -244,28 +288,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登陆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-cz-jXN">
-                                <rect key="frame" x="47" y="121" width="60" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-cz-jXN">
+                                <rect key="frame" x="47" y="121" width="74" height="36"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.42745098040000001" green="0.13725490200000001" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入OneNote账户与密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIv-xe-pa9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Input Your OutLook Account&amp;Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIv-xe-pa9">
                                 <rect key="frame" x="47" y="181" width="505" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入你的用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-yj-mXt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-yj-mXt">
                                 <rect key="frame" x="47" y="229" width="505" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gh0-FD-zr0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gh0-FD-zr0">
                                 <rect key="frame" x="48" y="277" width="505" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbA-Sl-Abr">
                                 <rect key="frame" x="48" y="341" width="504" height="50"/>
@@ -274,7 +318,7 @@
                                     <constraint firstAttribute="height" constant="50" id="ySN-7h-N1E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="下一步">
+                                <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -282,26 +326,26 @@
                                     <action selector="login:" destination="gDU-NG-uTv" eventType="touchUpInside" id="Zbk-7I-Ijw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐私声明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-Gv-UXL">
-                                <rect key="frame" x="270" y="562" width="60" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-Gv-UXL">
+                                <rect key="frame" x="275" y="562" width="51" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当您登陆之后，您的文档会处于联机状态" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1N9-OK-jxD">
-                                <rect key="frame" x="174" y="531" width="252" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXS-wt-jsL">
                                 <rect key="frame" x="4" y="0.0" width="592" height="44"/>
                                 <items>
-                                    <navigationItem title="登陆" id="JFd-Nx-eYc">
+                                    <navigationItem title="Login" id="JFd-Nx-eYc">
                                         <barButtonItem key="leftBarButtonItem" title="取消" id="XIf-G3-Zcs"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After you login in, your diaries will be stored offline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1N9-OK-jxD">
+                                <rect key="frame" x="137" y="531" width="327" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -378,6 +422,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="320" height="568"/>
         <image name="desktop" width="959" height="237"/>
     </resources>
 </document>

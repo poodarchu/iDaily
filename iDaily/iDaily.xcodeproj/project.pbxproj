@@ -14,6 +14,8 @@
 		551CD59F1CFDA1F800378B65 /* MonthDayCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD59E1CFDA1F800378B65 /* MonthDayCollectionVC.swift */; };
 		552D84F91CFFF1E400BA8FFB /* PDStartPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D84F81CFFF1E400BA8FFB /* PDStartPageVC.swift */; };
 		552D84FB1CFFF3BD00BA8FFB /* PDLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D84FA1CFFF3BD00BA8FFB /* PDLoginVC.swift */; };
+		552D85091D00083B00BA8FFB /* SSASideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85081D00083B00BA8FFB /* SSASideMenu.swift */; };
+		552D850B1D00094900BA8FFB /* PDProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D850A1D00094900BA8FFB /* PDProfile.swift */; };
 		556CF3F61CFCB3F100B1D7D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */; };
 		556CF3F81CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF3F71CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift */; };
 		556CF3FB1CFCB3F100B1D7D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556CF3F91CFCB3F100B1D7D9 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		551CD59E1CFDA1F800378B65 /* MonthDayCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDayCollectionVC.swift; sourceTree = "<group>"; };
 		552D84F81CFFF1E400BA8FFB /* PDStartPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDStartPageVC.swift; sourceTree = "<group>"; };
 		552D84FA1CFFF3BD00BA8FFB /* PDLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDLoginVC.swift; sourceTree = "<group>"; };
+		552D85081D00083B00BA8FFB /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSASideMenu.swift; path = iDaily/SSASideMenu.swift; sourceTree = "<group>"; };
+		552D850A1D00094900BA8FFB /* PDProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDProfile.swift; sourceTree = "<group>"; };
 		556CF3F21CFCB3F100B1D7D9 /* iDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556CF3F71CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDHomeCollectionVC.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			children = (
 				552D84F81CFFF1E400BA8FFB /* PDStartPageVC.swift */,
 				552D84FA1CFFF3BD00BA8FFB /* PDLoginVC.swift */,
+				552D850A1D00094900BA8FFB /* PDProfile.swift */,
 				55DDA8061CFDBD0900F0479F /* PDNavController.swift */,
 				556CF3F71CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift */,
 				551CD5931CFD828B00378B65 /* YearCollectionVC.swift */,
@@ -119,9 +124,18 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		552D85071D00081900BA8FFB /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				552D85081D00083B00BA8FFB /* SSASideMenu.swift */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
 		556CF3E91CFCB3F100B1D7D9 = {
 			isa = PBXGroup;
 			children = (
+				552D85071D00081900BA8FFB /* Libs */,
 				556CF3F41CFCB3F100B1D7D9 /* iDaily */,
 				556CF3F31CFCB3F100B1D7D9 /* Products */,
 			);
@@ -256,10 +270,12 @@
 				55DDA8071CFDBD0900F0479F /* PDNavController.swift in Sources */,
 				55B71DB91CFD5CBE008BC3B6 /* iDailyLayout.swift in Sources */,
 				551CD59D1CFDA14200378B65 /* iDailyCollectionViewCell.swift in Sources */,
+				552D850B1D00094900BA8FFB /* PDProfile.swift in Sources */,
 				551CD59B1CFD8E4100378B65 /* iDailyAnimator.swift in Sources */,
 				55D6CF3F1CFE6C3300911347 /* PDDiary.swift in Sources */,
 				556CF3FE1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld in Sources */,
 				556CF3F81CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift in Sources */,
+				552D85091D00083B00BA8FFB /* SSASideMenu.swift in Sources */,
 				556CF3F61CFCB3F100B1D7D9 /* AppDelegate.swift in Sources */,
 				55D6CF3A1CFE0A3E00911347 /* PDLocationHelper.swift in Sources */,
 				552D84FB1CFFF3BD00BA8FFB /* PDLoginVC.swift in Sources */,

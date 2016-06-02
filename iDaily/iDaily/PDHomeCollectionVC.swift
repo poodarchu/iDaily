@@ -19,10 +19,17 @@ class PDHomeCollectionVC: UICollectionViewController {
     var fetchedResultsController: NSFetchedResultsController!
     var yearsCount: Int = 1
     var sectionsCount: Int = 0
+    
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.whiteColor()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .Plain, target: self, action: #selector(SSASideMenu.presentRightMenuViewController))
+        
         
         do {
             let fetchRequest = NSFetchRequest(entityName:"PDDiary")

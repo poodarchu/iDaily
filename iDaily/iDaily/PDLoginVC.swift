@@ -25,7 +25,7 @@ class PDLoginVC: UIViewController {
     
     
     @IBAction func login(sender: UIButton) {
-        let dvc  = self.storyboard?.instantiateViewControllerWithIdentifier("PDNavController") as! PDNavController
+        let dvc  = self.storyboard?.instantiateViewControllerWithIdentifier("SSASideMenu") as! SSASideMenu
         self.presentViewController(dvc, animated: true, completion: nil)
     }
 }

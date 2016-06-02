@@ -1,3 +1,4 @@
 target 'iDaily' do
 	pod 'paper-onboarding'
+	pod 'CircleMenu', '~> 1.0.0'
 end
