@@ -64,6 +64,7 @@ class PDComposeVC: UIViewController{
         titleTextView.userInteractionEnabled = true
         titleTextView.bounces = false
         
+        //创建界面的时候，如果已经有diary，那么直接显示
         if let diary = diary {
             composeView.text = diary.content
             self.composeView.contentOffset = CGPointMake(0, self.composeView.contentSize.height)
@@ -72,6 +73,7 @@ class PDComposeVC: UIViewController{
             if let title = diary.title {
                 titleTextView.text = title
             }else{
+                //如果diary没有title，默认使用日期作为名字。这意味着新建一个diary时，默认名称已经创建好
                 titleTextView.text = "\(numToChineseWithUnit(NSCalendar.currentCalendar().component(NSCalendarUnit.Day, fromDate: diary.create_date))) 日"
             }
         }else{
@@ -86,16 +88,11 @@ class PDComposeVC: UIViewController{
         self.view.addSubview(titleTextView)
         
         //Add finish button
-        
-        finishButton = btnWith(text: "完",  fontSize: 18.0,  width: 50.0,  normalImgNm: "Oval", highlightedImgNm: "Oval_pressed")
-        
+        finishButton = btnWith(text: "Fn",  fontSize: 18.0,  width: 50.0,  normalImgNm: "Oval", highlightedImgNm: "Oval_pressed")
         finishButton.center = CGPointMake(screenRect.width - 20, screenRect.height - 30)
-        
         finishButton.addTarget(self, action: #selector(PDComposeVC.finishCompose(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
-        
         self.view.addSubview(finishButton)
-        
         
         self.finishButton.center = CGPointMake(self.view.frame.width - self.finishButton.frame.size.height/2.0 - 10, self.view.frame.height  - self.finishButton.frame.size.height/2.0 - 10)
         
@@ -122,10 +119,9 @@ class PDComposeVC: UIViewController{
         // Do any additional setup after loading the view.
     }
     
-    func updateAddress(notification: NSNotification) {
-        
+    func updateAddress(notification: NSNotification)
+    {
         if let address = notification.object as? String {
-            
             print("Author at \(address)")
             
             if (diary?.location) != nil {
@@ -134,26 +130,24 @@ class PDComposeVC: UIViewController{
                 locationTextView.text = "At \(address)"
             }
             
-            
-            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations:
-                {
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     self.locationTextView.alpha = 1.0
                 }, completion: nil)
             
             locationHelper.locationManager.stopUpdatingLocation()
         }
-        
-        
     }
     
+    //编辑完成
     func finishCompose(button: UIButton) {
         print("Finish compose \n", terminator: "")
         
+        //使用endEditing收起键盘
         self.composeView.endEditing(true)
         self.locationTextView.endEditing(true)
         
+        //确保有内容才进行保存
         if (composeView.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 1){
-            
             if let diary = diary {
                 diary.content = composeView.text
                 diary.location = locationTextView.text
@@ -186,6 +180,8 @@ class PDComposeVC: UIViewController{
             
         }
         
+        //Dismisses the view controller that was presented modally by the view controller.
+        //返回上一层视图
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -202,9 +198,15 @@ class PDComposeVC: UIViewController{
         UIView.animateWithDuration(1.0, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations:
             {
                 if (self.locationTextView.text == nil) {
-                    self.composeView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - newKeyboardHeight)
+                    self.composeView.frame = CGRect(x: 0,
+                                                    y: 0,
+                                                    width: self.view.frame.width,
+                                                    height: self.view.frame.height - newKeyboardHeight)
                 }else{
-                    self.composeView.frame = CGRectMake(0, contentMargin + titleTextViewHeight, self.composeView.frame.size.width,  self.view.frame.height - newKeyboardHeight - 40.0 - self.finishButton.frame.size.height/2.0 - (contentMargin + titleTextViewHeight))
+                    self.composeView.frame = CGRectMake(0,
+                        contentMargin + titleTextViewHeight,
+                        self.composeView.frame.size.width,
+                        self.view.frame.height - newKeyboardHeight - 40.0 - self.finishButton.frame.size.height/2.0 - (contentMargin + titleTextViewHeight))
                 }
                 
                 self.finishButton.center = CGPointMake(self.view.frame.width - self.finishButton.frame.size.height/2.0 - 10, self.view.frame.height - newKeyboardHeight - self.finishButton.frame.size.height/2.0 - 10)

@@ -199,7 +199,9 @@ class PDDiaryVC: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegat
     }
     
     func editDiary() {
-        let composeVC = self.storyboard?.instantiateViewControllerWithIdentifier("PDComposeVC") as! PDComposeVC
+        let ID = "PDComposeVC"
+        
+        let composeVC = self.storyboard?.instantiateViewControllerWithIdentifier(ID) as! PDComposeVC
         
         if let diary = diary {
             print("Find \(diary.create_date)")
@@ -209,6 +211,7 @@ class PDDiaryVC: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegat
         self.presentViewController(composeVC, animated: true, completion: nil)
     }
     
+    //并借助系统的分享框架，让用户选择自己喜欢的处理方式
     func saveToList() {
         let offSet = self.webView.scrollView.contentOffset.x
         let image = webView.captureView()
@@ -224,6 +227,7 @@ class PDDiaryVC: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegat
         self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
+    //使用deleteObject（）方法删除当前正在查看的Diary，接着调用save（）方法保存操作，最后调用hideDairy（）返回上一层。
     func deleteThisDiary() {
         managedContext.deleteObject(diary)
         do {

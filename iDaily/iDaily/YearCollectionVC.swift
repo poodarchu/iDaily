@@ -23,7 +23,7 @@ class YearCollectionVC: UICollectionViewController, UIGestureRecognizerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mDoubleUpRecognizer = UITapGestureRecognizer(target: self, action: #selector(YearCollectionVC.hideDiary))
+        let mDoubleUpRecognizer = UITapGestureRecognizer(target: self, action: #selector(YearCollectionVC.popToSuper))
         mDoubleUpRecognizer.delegate = self
         mDoubleUpRecognizer.numberOfTapsRequired = 2
         self.view.addGestureRecognizer(mDoubleUpRecognizer)
@@ -146,7 +146,7 @@ class YearCollectionVC: UICollectionViewController, UIGestureRecognizerDelegate 
         return cell
     }
     
-    func hideDiary() {
+    func popToSuper() {
         self.navigationController?.popViewControllerAnimated(true)
     }
 

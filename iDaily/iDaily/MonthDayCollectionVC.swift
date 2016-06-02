@@ -27,7 +27,7 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mDoubleUpRecognizer = UITapGestureRecognizer(target: self, action: #selector(MonthDayCollectionVC.hideDiary))
+        let mDoubleUpRecognizer = UITapGestureRecognizer(target: self, action: #selector(MonthDayCollectionVC.popToSuper))
         mDoubleUpRecognizer.delegate = self
         mDoubleUpRecognizer.numberOfTapsRequired = 2
         self.view.addGestureRecognizer(mDoubleUpRecognizer)
@@ -164,7 +164,7 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
         self.collectionView?.setCollectionViewLayout(iDailyLayout(), animated: false)
     }
     
-    func hideDiary() {
+    func popToSuper() {
         self.navigationController?.popViewControllerAnimated(true)
     }
 }

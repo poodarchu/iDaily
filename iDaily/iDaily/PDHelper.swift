@@ -43,8 +43,8 @@ extension PDDiary {
     }
 }
 
+//存：也就是把webView全尺寸的内容转换为UIImage，
 extension UIWebView {
-    
     func captureView() -> UIImage{
         // tempframe to reset view size after image was created
         let tmpFrame = self.frame
@@ -53,11 +53,13 @@ extension UIWebView {
         aFrame.size.width = self.sizeThatFits(UIScreen.mainScreen().bounds.size).width
         self.frame = aFrame
         // do image magic
+        //截图操作
         UIGraphicsBeginImageContextWithOptions(self.sizeThatFits(UIScreen.mainScreen().bounds.size), false, UIScreen.mainScreen().scale)
         let resizedContext = UIGraphicsGetCurrentContext()
         self.layer.renderInContext(resizedContext!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
         // reset Frame of view to origin
         self.frame = tmpFrame
         
