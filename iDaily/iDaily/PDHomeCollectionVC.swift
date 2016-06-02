@@ -28,6 +28,8 @@ class PDHomeCollectionVC: UICollectionViewController {
     {
         super.viewDidLoad()
         
+//        self.navigationController?.hidesBarsOnTap = true
+        
         self.view.backgroundColor = UIColor.whiteColor()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .Plain, target: self, action: #selector(SSASideMenu.presentRightMenuViewController))

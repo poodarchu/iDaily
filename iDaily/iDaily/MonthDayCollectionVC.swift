@@ -24,15 +24,17 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
     
     var fetchedResultsController : NSFetchedResultsController!
     
+    var yearLayout: iDailyLayout? = iDailyLayout()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.navigationController?.hidesBarsOnTap = true
         
         let mDoubleUpRecognizer = UITapGestureRecognizer(target: self, action: #selector(MonthDayCollectionVC.popToSuper))
         mDoubleUpRecognizer.delegate = self
         mDoubleUpRecognizer.numberOfTapsRequired = 2
         self.view.addGestureRecognizer(mDoubleUpRecognizer)
-        
-        
         
         do {
             let fetchRequest = NSFetchRequest(entityName:"PDDiary")
@@ -73,23 +75,15 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
         //
         monthLabel = iDailyLabel(fontName: "WenYue-XinQingNianTi-NC-W8", labelText: "\(numToChineseWithUnit(month)) 月", fontSize: 16.0,lineHeight: 5.0)
         monthLabel.frame = CGRectMake(screenRect.width - 15.0 - monthLabel.frame.size.width, (screenRect.height - 150)/2.0, monthLabel.frame.size.width, monthLabel.frame.size.height)
-        
         monthLabel.center = CGPointMake(composeButton.center.x, monthLabel.center.y + 28)
-        
         monthLabel.updateLabelColor(YAMABUKI)
         monthLabel.userInteractionEnabled = true
-        
-//        let mmTapUpRecognizer = UITapGestureRecognizer(target: self, action:"backToYear")
-//        mmTapUpRecognizer.numberOfTapsRequired = 1
-//        monthLabel.addGestureRecognizer(mmTapUpRecognizer)
-        
+    
         self.view.addSubview(monthLabel)
         
         
-        let yearLayout = iDailyLayout()
-        
-        yearLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
-        self.collectionView?.setCollectionViewLayout(yearLayout, animated: false)
+        yearLayout!.scrollDirection = UICollectionViewScrollDirection.Horizontal
+        self.collectionView?.setCollectionViewLayout(yearLayout!, animated: false)
         
         self.collectionView?.frame = CGRect(x:0, y:0, width:
             collectionViewWidth, height: itemHeight)

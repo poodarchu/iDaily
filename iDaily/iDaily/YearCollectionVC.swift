@@ -23,6 +23,8 @@ class YearCollectionVC: UICollectionViewController, UIGestureRecognizerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        self.navigationController?.hidesBarsOnTap = true
+        
         let mDoubleUpRecognizer = UITapGestureRecognizer(target: self, action: #selector(YearCollectionVC.popToSuper))
         mDoubleUpRecognizer.delegate = self
         mDoubleUpRecognizer.numberOfTapsRequired = 2
