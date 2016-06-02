@@ -45,7 +45,7 @@
 		552D84FA1CFFF3BD00BA8FFB /* PDLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDLoginVC.swift; sourceTree = "<group>"; };
 		552D85081D00083B00BA8FFB /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSASideMenu.swift; path = iDaily/SSASideMenu.swift; sourceTree = "<group>"; };
 		552D850A1D00094900BA8FFB /* PDProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDProfile.swift; sourceTree = "<group>"; };
-		552D852F1D00367D00BA8FFB /* iDaily-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iDaily-Bridging-Header.h"; sourceTree = "<group>"; };
+		552D852F1D00367D00BA8FFB /* iDaily-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iDaily-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		556CF3F21CFCB3F100B1D7D9 /* iDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556CF3F71CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDHomeCollectionVC.swift; sourceTree = "<group>"; };
@@ -139,7 +139,6 @@
 				552D85071D00081900BA8FFB /* Libs */,
 				556CF3F41CFCB3F100B1D7D9 /* iDaily */,
 				556CF3F31CFCB3F100B1D7D9 /* Products */,
-				552D852F1D00367D00BA8FFB /* iDaily-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +167,7 @@
 		557901061CFD339C00D1A97D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				552D852F1D00367D00BA8FFB /* iDaily-Bridging-Header.h */,
 				556CF4041CFCB3F100B1D7D9 /* Info.plist */,
 				556CF3FC1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld */,
 				556CF3F91CFCB3F100B1D7D9 /* Main.storyboard */,
