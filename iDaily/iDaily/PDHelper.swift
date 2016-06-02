@@ -26,6 +26,10 @@ let DiaryFont = UIFont(name: defaultFontName, size: 18) as UIFont!
 let DiaryLocationFont = UIFont(name: defaultFontName, size: 16) as UIFont!
 let DiaryTitleFont = UIFont(name: defaultFontName, size: 18) as UIFont!
 
+//managedContext是数据库的管理对象，通过这个对象对数据库进行增删改查
+//当想要保存日记时，就需要
+//1. 先用数据生成NSManagedObject，
+//2. 再通过managedObjectContext进行持久化存储
 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 let managedContext = appDelegate.managedObjectContext
 

@@ -45,6 +45,7 @@
 		552D84FA1CFFF3BD00BA8FFB /* PDLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDLoginVC.swift; sourceTree = "<group>"; };
 		552D85081D00083B00BA8FFB /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSASideMenu.swift; path = iDaily/SSASideMenu.swift; sourceTree = "<group>"; };
 		552D850A1D00094900BA8FFB /* PDProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDProfile.swift; sourceTree = "<group>"; };
+		552D852F1D00367D00BA8FFB /* iDaily-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iDaily-Bridging-Header.h"; sourceTree = "<group>"; };
 		556CF3F21CFCB3F100B1D7D9 /* iDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556CF3F51CFCB3F100B1D7D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556CF3F71CFCB3F100B1D7D9 /* PDHomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDHomeCollectionVC.swift; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 				552D85071D00081900BA8FFB /* Libs */,
 				556CF3F41CFCB3F100B1D7D9 /* iDaily */,
 				556CF3F31CFCB3F100B1D7D9 /* Products */,
+				552D852F1D00367D00BA8FFB /* iDaily-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -398,10 +400,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.poodar.iDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iDaily-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -409,10 +414,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.poodar.iDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iDaily-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -29,17 +29,15 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
         
         do {
             let fetchRequest = NSFetchRequest(entityName:"PDDiary")
-            
             print("year = \(year) AND month = \(month)")
             
+            //月的查询略有变化，增加了确切的年份和月份
             fetchRequest.predicate = NSPredicate(format: "year = \(year) AND month = \(month)")
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "create_date", ascending: true)]
-            
-            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                                  managedObjectContext: managedContext, sectionNameKeyPath: "year",
-                                                                  cacheName: nil)
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: "year", cacheName: nil)
             
             fetchedResultsController.delegate = self
+            
             try fetchedResultsController.performFetch()
             
             diaries = fetchedResultsController.fetchedObjects as! [NSManagedObject]
@@ -50,7 +48,7 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
         
         
         yearLabel = iDailyLabel(fontName: "WenYue-XinQingNianTi-NC-W8", labelText: "\(numToChinese(year))年", fontSize: 22.0,lineHeight: 5.0)
-        yearLabel.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 20 + yearLabel.frame.size.height/2.0 )
+        yearLabel.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 70 + yearLabel.frame.size.height/2.0)
         yearLabel.userInteractionEnabled = true
         self.view.addSubview(yearLabel)
 
@@ -60,7 +58,7 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
         
         //Add compose button
         composeButton = btnWith(text: "记",  fontSize: 14.0,  width: 40.0,  normalImgNm: "Oval", highlightedImgNm: "Oval_pressed")
-        composeButton.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 38 + yearLabel.frame.size.height + 26.0/2.0)
+        composeButton.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 86 + yearLabel.frame.size.height + 26.0/2.0)
         composeButton.addTarget(self, action:#selector(MonthDayCollectionVC.newCompose), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view.addSubview(composeButton)
@@ -89,7 +87,7 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
         self.collectionView?.frame = CGRect(x:0, y:0, width:
             collectionViewWidth, height: itemHeight)
         self.collectionView?.center = CGPoint(x: self.view.frame.size.width/2.0, y: self.view.frame.size.height/2.0)
-        
+        self.collectionView?.showsHorizontalScrollIndicator = false
         self.view.backgroundColor = UIColor.whiteColor()
         self.collectionView?.backgroundColor = UIColor.whiteColor()
     }
@@ -133,5 +131,26 @@ class MonthDayCollectionVC: UICollectionViewController, NSFetchedResultsControll
         }
         
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let vcID = "PDDiaryVC"
+        let dvc = self.storyboard?.instantiateViewControllerWithIdentifier(vcID) as! PDDiaryVC
+        
+        let diary = fetchedResultsController.objectAtIndexPath(indexPath) as! PDDiary
+        
+        dvc.diary = diary
+        
+        self.navigationController!.pushViewController(dvc, animated: true)
+        
+    }
+    
+    //Notifies the receiver that 
+    //the fetched results controller has completed processing of 
+    //one or more changes due to an add, remove, move, or update.
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        diaries = fetchedResultsController.fetchedObjects as! [NSManagedObject]
+        collectionView?.reloadData()
+        self.collectionView?.setCollectionViewLayout(iDailyLayout(), animated: false)
     }
 }

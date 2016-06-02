@@ -82,9 +82,7 @@ class PDComposeVC: UIViewController{
         composeView.becomeFirstResponder()
         
         self.view.addSubview(composeView)
-        
         self.view.addSubview(locationTextView)
-        
         self.view.addSubview(titleTextView)
         
         //Add finish button
@@ -133,7 +131,7 @@ class PDComposeVC: UIViewController{
             if (diary?.location) != nil {
                 locationTextView.text = diary?.location
             }else {
-                locationTextView.text = "于 \(address)"
+                locationTextView.text = "At \(address)"
             }
             
             
@@ -157,28 +155,23 @@ class PDComposeVC: UIViewController{
         if (composeView.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 1){
             
             if let diary = diary {
-                
                 diary.content = composeView.text
                 diary.location = locationTextView.text
                 diary.title = titleTextView.text
-                
-                
             }else{
-                
+                //将新的内容创建为entity添加到数据库中存储
                 let entity =  NSEntityDescription.entityForName("PDDiary", inManagedObjectContext: managedContext)
                 
                 let newdiary = PDDiary(entity: entity!,
                                        insertIntoManagedObjectContext:managedContext)
-                newdiary.content = composeView.text
                 
+                newdiary.content = composeView.text
                 if let address  = locationHelper.address {
                     newdiary.location = address
                 }
-                
                 if let title = titleTextView.text {
                     newdiary.title = title
                 }
-                
                 
                 newdiary.updateTimeWithDate(NSDate())
             }
@@ -202,8 +195,8 @@ class PDComposeVC: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    func updateTextViewSizeForKeyboardHeight(keyboardHeight: CGFloat) {
-        
+    func updateTextViewSizeForKeyboardHeight(keyboardHeight: CGFloat)
+    {
         let newKeyboardHeight = keyboardHeight
         
         UIView.animateWithDuration(1.0, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations:
@@ -216,9 +209,7 @@ class PDComposeVC: UIViewController{
                 
                 self.finishButton.center = CGPointMake(self.view.frame.width - self.finishButton.frame.size.height/2.0 - 10, self.view.frame.height - newKeyboardHeight - self.finishButton.frame.size.height/2.0 - 10)
                 
-                
                 self.locationTextView.center = CGPointMake(self.locationTextView.frame.size.width/2.0 + 20.0, self.finishButton.center.y)
-                
             }, completion: nil)
     }
     

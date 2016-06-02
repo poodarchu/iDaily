@@ -49,7 +49,7 @@ class YearCollectionVC: UICollectionViewController {
         
         // Register cell classes
         yearLabel = iDailyLabel(fontName: "WenYue-XinQingNianTi-NC-W8", labelText: "\(numToChinese(year))年", fontSize: 20.0,lineHeight: 5.0)
-        yearLabel.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 20 + yearLabel.frame.size.height/2.0 )
+        yearLabel.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 70 + yearLabel.frame.size.height/2.0 )
         yearLabel.userInteractionEnabled = true
         
         let mTapUpRecognizer = UITapGestureRecognizer(target: self, action:Selector("backToHome"))
@@ -60,7 +60,7 @@ class YearCollectionVC: UICollectionViewController {
         
         //Add compose button
         composeButton = btnWith(text: "记",  fontSize: 14.0,  width: 40.0,  normalImgNm: "Oval", highlightedImgNm: "Oval_pressed")
-        composeButton.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 38 + yearLabel.frame.size.height + 26.0/2.0)
+        composeButton.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 86 + yearLabel.frame.size.height + 26.0/2.0)
         composeButton.addTarget(self, action:#selector(YearCollectionVC.newCompose), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view.addSubview(composeButton)

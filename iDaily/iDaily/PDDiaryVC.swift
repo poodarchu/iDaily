@@ -26,7 +26,6 @@ class PDDiaryVC: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegat
         self.view.backgroundColor = UIColor.whiteColor()
         
         setUpUI()
-        
         showBtns()
     }
     
