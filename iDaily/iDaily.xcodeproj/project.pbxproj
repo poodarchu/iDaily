@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55013C0D1D01056F001E2364 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 55013C0C1D01056F001E2364 /* README.md */; };
 		551CD5941CFD828B00378B65 /* YearCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD5931CFD828B00378B65 /* YearCollectionVC.swift */; };
 		551CD5981CFD86B900378B65 /* PDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD5971CFD86B900378B65 /* PDHelper.swift */; };
 		551CD59B1CFD8E4100378B65 /* iDailyAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CD59A1CFD8E4100378B65 /* iDailyAnimator.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55013C0C1D01056F001E2364 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		551CD5931CFD828B00378B65 /* YearCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearCollectionVC.swift; sourceTree = "<group>"; };
 		551CD5971CFD86B900378B65 /* PDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDHelper.swift; sourceTree = "<group>"; };
 		551CD59A1CFD8E4100378B65 /* iDailyAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iDailyAnimator.swift; sourceTree = "<group>"; };
@@ -92,13 +94,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		551CD5921CFD71F200378B65 /* Resources */ = {
+		55013C0E1D010582001E2364 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				55B71DBA1CFD65CB008BC3B6 /* GuTiFangSong.otf */,
+				55B71DB41CFD5520008BC3B6 /* XinQingNianTi.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		55013C0F1D01058F001E2364 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
 				55D6CF401CFE742500911347 /* template.html */,
-				55B71DBA1CFD65CB008BC3B6 /* GuTiFangSong.otf */,
-				55B71DB41CFD5520008BC3B6 /* XinQingNianTi.otf */,
+			);
+			name = Templates;
+			sourceTree = "<group>";
+		};
+		551CD5921CFD71F200378B65 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				556CF3FF1CFCB3F100B1D7D9 /* Assets.xcassets */,
+				55013C0F1D01058F001E2364 /* Templates */,
+				55013C0E1D010582001E2364 /* Fonts */,
 				557891451D0061C200B3354C /* pics */,
 			);
 			name = Resources;
@@ -201,6 +219,7 @@
 				556CF3FC1CFCB3F100B1D7D9 /* iDaily.xcdatamodeld */,
 				556CF3F91CFCB3F100B1D7D9 /* Main.storyboard */,
 				556CF4011CFCB3F100B1D7D9 /* LaunchScreen.storyboard */,
+				55013C0C1D01056F001E2364 /* README.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -307,6 +326,7 @@
 				556CF40B1CFD274C00B1D7D9 /* iDailyLabel.swift in Sources */,
 				55DDA8071CFDBD0900F0479F /* PDNavController.swift in Sources */,
 				55B71DB91CFD5CBE008BC3B6 /* iDailyLayout.swift in Sources */,
+				55013C0D1D01056F001E2364 /* README.md in Sources */,
 				551CD59D1CFDA14200378B65 /* iDailyCollectionViewCell.swift in Sources */,
 				552D850B1D00094900BA8FFB /* PDProfile.swift in Sources */,
 				551CD59B1CFD8E4100378B65 /* iDailyAnimator.swift in Sources */,
