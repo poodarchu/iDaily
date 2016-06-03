@@ -28,4 +28,8 @@ class PDLoginVC: UIViewController {
         let dvc  = self.storyboard?.instantiateViewControllerWithIdentifier("SSASideMenu") as! SSASideMenu
         self.presentViewController(dvc, animated: true, completion: nil)
     }
+    
+    @IBAction func cancel(sender: AnyObject) {
+
+    }
 }

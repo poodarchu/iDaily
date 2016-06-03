@@ -333,7 +333,11 @@
                                 <rect key="frame" x="4" y="0.0" width="592" height="44"/>
                                 <items>
                                     <navigationItem title="Login" id="JFd-Nx-eYc">
-                                        <barButtonItem key="leftBarButtonItem" title="取消" id="XIf-G3-Zcs"/>
+                                        <barButtonItem key="leftBarButtonItem" title="取消" id="XIf-G3-Zcs">
+                                            <connections>
+                                                <action selector="cancel:" destination="gDU-NG-uTv" id="BcA-Fg-ash"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
